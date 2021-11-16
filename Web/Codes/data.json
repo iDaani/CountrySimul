@@ -1,0 +1,725 @@
+{
+    "room_day_template": [
+        {
+            "name": "living_room_template",
+            "id": 3,
+            "stateAtTime": [
+                {
+                    "time": "13:30",
+                    "roomState": {
+                        "room_roles": ["role_teenager"],
+                        "room_objects": [
+                            "object_sofa",
+                            "object_chair",
+                            "object_table",
+                            "object_wall",
+                            "object_ceiling",
+                            "object_tv",
+                            "object_tubelight",
+                            "object_yoghurt",
+                            "object_salad"
+                        ]
+                    },
+                    "objectState": [
+                        {
+                            "object_name": "object_sofa",
+                            "object_id": 31,
+                            "is_being_sat_on": true
+                        },
+                        {
+                            "object_name": "object_tubelight",
+                            "object_id": 32,
+                            "is_turned_on": true
+                        },
+                        {
+                            "object_name": "object_tv",
+                            "object_id": 33,
+                            "is_turned_on": true
+                        },
+                       {
+                         "object_name": "object_yoghurt",
+                         "object_id": 34,
+                         "is_being_eaten": true
+                        },
+                       {
+                         "object_name": "object_salad",
+                         "object_id": 35,
+                         "is_being_eaten": true
+
+                       },
+                       {
+                         "object_name": "object_chair",
+                         "object_id": 36,
+                         "is_being_sat_on": false
+
+
+                       }
+                    ],
+                    "role": [
+                      {
+                            "role_name": "role_teenager",
+                            "role_id": 1,
+                            "role_object_id": [
+                                31, 33, 34, 35
+                            ],
+                            "role_action": [
+                                "is_sitting_on_sofa", "is_watching_tv", "is_eating_yoghurt", "is_eating_salad"
+                            ]
+                        }
+
+
+                    ]
+                },
+                {
+                    "time": "14:00",
+                    "roomState": {
+                        "room_roles": [
+                            "role_teenager"
+                        ],
+                        "room_objects": [
+                            "object_sofa",
+                            "object_chair",
+                            "object_table",
+                            "object_wall",
+                            "object_ceiling",
+                            "object_tv",
+                            "object_tubelight"
+                        ]
+                    },
+                    "objectState": [
+                        {
+                            "object_name": "object_sofa",
+                            "object_id": 31,
+                            "is_being_sat_on": false
+                        },
+                        {
+                            "object_name": "object_tubelight",
+                            "object_id": 32,
+                            "is_turned_on": true
+                        },
+                        {
+                            "object_name": "object_tv",
+                            "object_id": 33,
+                            "is_turned_on": true
+                        },
+                        {
+                         "object_name": "object_chair",
+                         "object_id": 36,
+                         "is_being_sat_on": true
+                        }
+                    ],
+                    "role": [
+                        {
+                            "role_name": "role_teenager",
+                            "role_id": 1,
+                            "role_object_id": [
+                              33, 36
+                            ],
+                            "role_action": [
+                                "is_sitting_on_chair", "is_watching_tv"
+                            ]
+                        }
+                    ]
+                },
+
+              {
+                    "time": "16:15",
+                    "roomState": {
+                        "room_roles": [
+
+                        ],
+                        "room_objects": [
+                            "object_sofa",
+                            "object_chair",
+                            "object_table",
+                            "object_wall",
+                            "object_ceiling",
+                            "object_tv",
+                            "object_tubelight"
+                        ]
+                    },
+                    "objectState": [
+                        {
+                            "object_name": "object_sofa",
+                            "object_id": 31,
+                            "is_being_sat_on": false
+                        },
+                        {
+                            "object_name": "object_tubelight",
+                            "object_id": 32,
+                            "is_turned_on": false
+                        },
+                        {
+                            "object_name": "object_tv",
+                            "object_id": 33,
+                            "is_turned_on": false
+                        },
+                        {
+                         "object_name": "object_chair",
+                         "object_id": 36,
+                         "is_being_sat_on": false
+                        }
+                    ],
+                    "role": [
+
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "bedroom_template",
+            "id": 0,
+            "stateAtTime": [
+                {
+                    "time": "12:00",
+                    "roomState": {
+                        "room_roles": ["role_teenager"],
+                        "room_objects": [
+                            "object_bed",
+                            "object_lights",
+                            "object_wall",
+                            "object_studytable",
+                            "object_ceiling",
+                            "object_PC",
+                            "object_curtains"
+                        ]
+                    },
+                    "objectState": [
+                        {
+                            "object_name": "object_lights",
+                            "object_id": 1,
+                            "is_turned_on": false
+                        },
+                        {
+                            "object_name": "object_PC",
+                            "object_id": 2,
+                            "is_turned_on": true
+                        },
+                        {
+                          "object_name": "object_curtains",
+                          "object_id": 3,
+                          "are_open": false
+                        },
+                        {
+                          "object_name": "object_bed",
+                          "object_id": 4,
+                          "is_slept_on": true
+                        }
+                    ],
+                    "role": [
+                        {
+                            "role_name": "role_teenager",
+                            "role_id": 1,
+                            "role_object_id": [
+                                4
+                            ],
+                            "role_action": [
+                                "is_sleeping_on_bed_with_lights_and_curtains_off"
+                            ]
+                        }
+
+
+
+                    ]
+                },
+
+              {
+                    "time": "12:30",
+                    "roomState": {
+                        "room_roles": [
+
+                        ],
+                        "room_objects": [
+                            "object_bed",
+                            "object_lights",
+                            "object_wall",
+                            "object_studytable",
+                            "object_ceiling",
+                            "object_PC",
+                            "object_curtains"
+                        ]
+                    },
+                    "objectState": [
+                        {
+                            "object_name": "object_lights",
+                            "object_id": 1,
+                            "is_turned_on": true
+                        },
+                        {
+                            "object_name": "object_PC",
+                            "object_id": 2,
+                            "is_turned_on": false
+                        },
+                        {
+                          "object_name": "object_curtains",
+                          "object_id": 3,
+                          "are_open": true
+                        },
+                        {
+                          "object_name": "object_bed",
+                          "object_id": 4,
+                          "is_slept_on": false
+                        }
+                    ],
+                    "role": [
+                    ]
+                },
+
+
+               {
+                    "time": "15:00",
+                    "roomState": {
+                        "room_roles": ["role_teenager"],
+                        "room_objects": [
+                            "object_bed",
+                            "object_lights",
+                            "object_wall",
+                            "object_studytable",
+                            "object_ceiling",
+                            "object_PC",
+                            "object_curtains"
+                        ]
+                    },
+                    "objectState": [
+                        {
+                            "object_name": "object_lights",
+                            "object_id": 1,
+                            "is_turned_on": true
+                        },
+                        {
+                            "object_name": "object_PC",
+                            "object_id": 2,
+                            "is_turned_on": true
+                        },
+                        {
+                          "object_name": "object_curtains",
+                          "object_id": 3,
+                          "are_open": true
+                        },
+                        {
+                          "object_name": "object_bed",
+                          "object_id": 4,
+                          "is_slept_on": false
+                        }
+                    ],
+                    "role": [
+                        {
+                            "role_name": "role_teenager",
+                            "role_id": 1,
+                            "role_object_id": [
+                                2
+                            ],
+                            "role_action": [
+                                "is_using_computer_with_lights_and_curtains_on"
+                            ]
+                        }
+                    ]
+                },
+
+               {
+                    "time": "16:15",
+                    "roomState": {
+                        "room_roles": [
+
+                        ],
+                        "room_objects": [
+                            "object_bed",
+                            "object_lights",
+                            "object_wall",
+                            "object_studytable",
+                            "object_ceiling",
+                            "object_PC",
+                            "object_curtains"
+                        ]
+                    },
+                    "objectState": [
+                        {
+                            "object_name": "object_lights",
+                            "object_id": 1,
+                            "is_turned_on": false
+                        },
+                        {
+                            "object_name": "object_PC",
+                            "object_id": 2,
+                            "is_turned_on": false
+                        },
+                        {
+                          "object_name": "object_curtains",
+                          "object_id": 3,
+                          "are_open": true
+                        },
+                        {
+                          "object_name": "object_bed",
+                          "object_id": 4,
+                          "is_slept_on": false
+                        }
+                    ],
+                    "role": [
+
+                    ]
+                },
+
+
+                {
+                    "time": "18:00",
+                    "roomState": {
+                        "room_roles": [
+                            "role_teenager",
+                            "role_daughter"
+                        ],
+                        "room_objects": [
+                            "object_bed",
+                            "object_lights",
+                            "object_wall",
+                            "object_studytable",
+                            "object_ceiling",
+                            "object_PC",
+                            "object_curtains",
+                            "object_food_on_plate",
+                            "object_fruits"
+                        ]
+                    },
+                    "objectState": [
+                        {
+                            "object_name": "object_lights",
+                            "object_id": 1,
+                            "is_turned_on": true
+                        },
+                        {
+                            "object_name": "object_PC",
+                            "object_id": 2,
+                            "is_turned_on": false
+                        },
+                        {
+                          "object_name": "object_curtains",
+                          "object_id": 3,
+                          "are_open": true
+                        },
+                        {
+                          "object_name": "object_bed",
+                          "object_id": 4,
+                          "is_slept_on": false,
+                          "is_being_sat_on": true
+                        },
+                       {
+                         "object_name": "object_food_on_plate",
+                         "object_id": 5,
+                         "is_being_eaten": true,
+                         "is_finished": false
+                       },
+
+                      {
+                        "object_name": "object_fruits",
+                        "object_id": 6,
+                        "is_being_eaten": false,
+                        "is_finished": false
+
+                      }
+                    ],
+                    "role": [
+                        {
+                            "role_name": "role_teenager",
+                            "role_id": 1,
+                            "role_object_id": [
+                                4, 5
+                            ],
+                            "role_action": [
+                                "is_being_sat_on", "is_being_eaten"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+      {
+
+              "name": "bathroom_template",
+            "id": 1,
+            "stateAtTime": [
+                {
+                    "time": "12:30",
+                    "roomState": {
+                        "room_roles": ["role_teenager"],
+                        "room_objects": [
+                            "object_toilet",
+                            "object_sink",
+                            "object_wall",
+                            "object_brush",
+                            "object_ceiling",
+                            "object_tap",
+                            "object_facewash",
+                            "object_shower",
+                            "object_lights"
+                        ]
+                    },
+                    "objectState": [
+                        {
+                            "object_name": "object_lights",
+                            "object_id": 11,
+                            "is_turned_on": true
+                        },
+                        {
+                            "object_name": "object_tap",
+                            "object_id": 12,
+                            "is_turned_on": true
+                        },
+                        {
+                          "object_name": "object_brush",
+                          "object_id": 13,
+                          "is_being_brushed": true
+                        },
+                        {
+                          "object_name": "object_shower",
+                          "object_id": 14,
+                          "is_turned_on": false
+                        }
+                    ],
+                    "role": [
+                        {
+                            "role_name": "role_teenager",
+                            "role_id": 1,
+                            "role_object_id": [
+                                13
+                            ],
+                            "role_action": [
+                                "is_brushing"
+                            ]
+                        }
+
+
+
+                    ]
+                }
+            ]
+
+      },
+
+      {
+            "name": "kitchen_template",
+            "id": 2,
+            "stateAtTime": [
+                {
+                    "time": "13:00",
+                    "roomState": {
+                        "room_roles": ["role_teenager"],
+                        "room_objects": [
+                            "object_microwave",
+                            "object_lights",
+                            "object_refrigerator",
+                            "object_ceiling",
+                            "object_wall",
+                            "object_window",
+                            "object_dustbin",
+                            "object_fruits",
+                            "object_packed_food",
+                            "object_plate",
+                            "object_yoghurt",
+                            "object_salad"
+                        ]
+                    },
+                    "objectState": [
+                        {
+                            "object_name": "object_lights",
+                            "object_id": 21,
+                            "is_turned_on": true
+                        },
+                        {
+                            "object_name": "object_microwave",
+                            "object_id": 22,
+                            "is_turned_on": false
+                        },
+                        {
+                          "object_name": "object_refrigerator",
+                          "object_id": 23,
+                          "is_open": false
+                        },
+                        {
+                          "object_name": "object_window",
+                          "object_id": 24,
+                          "is_open": false
+                        },
+                        {
+                          "object_name": "object_yoghurt",
+                          "object_id": 25
+                        },
+                        {
+                          "object_name": "object_salad",
+                          "object_id": 26
+                        }
+                    ],
+                    "role": [
+                        {
+                            "role_name": "role_teenager",
+                            "role_id": 1,
+                            "role_object_id": [
+                              25, 26
+
+                            ],
+                            "role_action": [
+                                "is_taking_yoghurt", "is_taking_salad"
+                            ]
+                        }
+
+                    ]
+                },
+                {
+                    "time": "13:30",
+                    "roomState": {
+                        "room_roles": [
+
+                        ],
+                        "room_objects": [
+                            "object_microwave",
+                            "object_lights",
+                            "object_refrigerator",
+                            "object_ceiling",
+                            "object_wall",
+                            "object_window",
+                            "object_dustbin",
+                            "object_fruits",
+                            "object_packed_food",
+                            "object_plate"
+                        ]
+                    },
+                    "objectState": [
+                        {
+                            "object_name": "object_lights",
+                            "object_id": 21,
+                            "is_turned_on": false
+                        },
+                        {
+                            "object_name": "object_microwave",
+                            "object_id": 22,
+                            "is_turned_on": false
+                        },
+                        {
+                          "object_name": "object_refrigerator",
+                          "object_id": 23,
+                          "is_open": false
+                        },
+                        {
+                          "object_name": "object_window",
+                          "object_id": 24,
+                          "is_open": true
+                        }
+                    ],
+                    "role": [
+
+                    ]
+                },
+
+              {
+                    "time": "17:55",
+                    "roomState": {
+                        "room_roles": ["role_teenager"],
+                        "room_objects": [
+                            "object_microwave",
+                            "object_lights",
+                            "object_refrigerator",
+                            "object_ceiling",
+                            "object_wall",
+                            "object_window",
+                            "object_dustbin",
+                            "object_fruits",
+                            "object_packed_food",
+                            "object_plate"
+                        ]
+                    },
+                    "objectState": [
+                        {
+                            "object_name": "object_lights",
+                            "object_id": 21,
+                            "is_turned_on": true
+                        },
+                        {
+                            "object_name": "object_microwave",
+                            "object_id": 22,
+                            "is_turned_on": true
+                        },
+                        {
+                          "object_name": "object_refrigerator",
+                          "object_id": 23,
+                          "is_open": false
+                        },
+                        {
+                          "object_name": "object_window",
+                          "object_id": 24,
+                          "is_open": true
+                        },
+                        {
+                          "object_name": "object_packed_food",
+                          "object_id": 27,
+                          "is_being_cooked_in_microwave": true
+                        },
+                        {
+                          "object_name": "object_plate",
+                          "object_id": 28,
+                          "is_inside_microwave":true
+
+                        }
+                    ],
+                    "role": [
+                        {
+                            "role_name": "role_teenager",
+                            "role_id": 1,
+                            "role_object_id": [
+                              22, 27, 28
+
+                            ],
+                            "role_action": [
+                                "is_cooking_packed_food_on_plate_inside_microwave_owen"
+                            ]
+                        }
+
+                    ]
+                },
+
+               {
+                    "time": "18:00",
+                    "roomState": {
+                        "room_roles": [
+
+                        ],
+                        "room_objects": [
+                            "object_microwave",
+                            "object_lights",
+                            "object_refrigerator",
+                            "object_ceiling",
+                            "object_wall",
+                            "object_window",
+                            "object_dustbin"
+                        ]
+                    },
+                    "objectState": [
+                        {
+                            "object_name": "object_lights",
+                            "object_id": 21,
+                            "is_turned_on": false
+                        },
+                        {
+                            "object_name": "object_microwave",
+                            "object_id": 22,
+                            "is_turned_on": false
+                        },
+                        {
+                          "object_name": "object_refrigerator",
+                          "object_id": 23,
+                          "is_open": false
+                        },
+                        {
+                          "object_name": "object_window",
+                          "object_id": 24,
+                          "is_open": false
+                        }
+                    ],
+                    "role": [
+
+                    ]
+                }
+
+
+            ]
+        }
+    ]
+}

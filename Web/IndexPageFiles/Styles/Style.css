@@ -1,0 +1,393 @@
+/* This style file has been created automatically per your request.
+
+The following pages can help you get started with CSS:
+* CSS Tutorial (http://w3schools.com/css/default.asp)
+* CSS3 Tutorial (http://w3schools.com/css3/default.asp)
+* CSS Reference (http://w3schools.com/cssref/default.asp) */
+
+body
+{
+  font-family: 'Roboto', sans-serif;
+  margin: 0px;
+  padding: 8px;
+  color: #353535;
+  line-height: 1.5;
+}
+
+/* Import font from Google Web Fonts */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/CWB0XYA8bzo0kSThX0UTuA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+a
+{
+  color: #00BFB4;
+  text-decoration: none;
+}
+
+a:visited
+{
+  color: #3E8983;
+}
+
+a:hover
+{
+  color: #0F585D;
+}
+
+a:active
+{
+  color: #0F585D;
+}
+
+a img
+{
+  border:0;
+}
+
+h1
+{
+  font-family: 'Roboto', sans-serif;
+  color: #313131;
+  padding-top:15px;
+  padding-bottom:15px;
+  font-size: 40px;
+  margin:0;
+}
+
+h2
+{
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+  text-align: left;
+  color: #686868;
+  padding-top: 35px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-top: 10px solid #EEEEEE;
+}
+
+ul
+{
+  list-style-image: url('../Images/bullet_9x9.png');
+  padding-left: 40px;
+}
+
+ul li
+{
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+  vertical-align: middle;
+}
+
+ol
+{
+  padding-left: 40px;  
+}
+
+ol li
+{
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+}
+
+/* --- Custom classes --- */
+
+.screenshot
+{
+  box-shadow: 0px 2px 6px 1px rgba(0,0,0,0.75);
+}
+
+/* Start Page */
+
+.startHeader
+{
+  background: #444349 url('../Images/startbanner.png');
+  margin: 0;
+  color: #ffffff;
+  line-height:130px;
+  padding-left: 25px;
+  padding-right: 25px;
+  font-size: 37px;
+}
+
+.startTileWrapper
+{
+  overflow:hidden;
+}
+
+.startTileWrapper h2
+{
+  border-top: none; 
+  text-align: center;
+  font-size: 1.5em;
+  padding-top: 20px;
+  margin-top: 0;
+}
+
+.startTileOuter:before
+{
+  content: "";
+  display: block;
+  padding-top: 10px;
+  background: white;
+}
+
+.startTileOuter
+{
+   float: left;
+   width: 50%;
+}
+
+/* Phone to portrait tablet */
+@media (max-width: 767px) 
+{ 
+  .startTileOuter
+  { /* One column per screen */
+    width:100%;
+  }
+}
+
+.startTileInner
+{
+  padding-bottom:100%; 
+  margin-bottom:-100%;
+  background-color: #EEEEEE;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding-right: 10px;  
+}
+
+.startTileInner li
+{
+ font-size: 1.1em; 
+}
+
+/* Wrapper & footer elements */
+
+.footer
+{ 
+  padding-top: 5px;
+  font-size: 12px;
+  border-top: 1px solid #E0E0E0;
+  background: #fff;
+  color: #686868;
+}
+
+
+/* Tables */
+/* CHTable is the CSS class assigned to all tables by default. Use the styles below to customize the default tables appearance */
+
+.CHTable
+{
+  font-family: 'Roboto', sans-serif;
+	font-size: 12px;
+	text-align: left;
+	border-collapse: collapse;
+  background: #fff; 
+  border: 1px solid #eee;
+}
+
+.CHTable td
+{
+  padding: 8px;
+	color: #333;
+  border-right: 1px solid #eee;
+	border-left: 1px solid #eee;
+}
+
+.CHTable th
+{
+  font-size: 15px;
+	padding: 10px 8px;
+	color: #353535;
+  background: #E0E0E0;
+  font-weight: normal;
+}
+
+.CHTable tr:nth-child(even)
+{
+	background: #E0E0E0; 
+}
+
+/* Simple table */
+
+.tableSimple
+{
+  font-family: 'Roboto', sans-serif;
+	font-size: 12px;
+	width: 100%;
+	text-align: left;
+	border-collapse: collapse;
+	border: 1px solid #6C6C6C;
+}
+
+.tableSimple th
+{
+	padding: 15px 10px 10px 10px;
+	font-weight: normal;
+	font-size: 14px;
+	color: #fff;
+  text-align:left;
+  background-color:#939393;
+}
+
+.tableSimple tbody
+{
+	background: white;
+}
+
+.tableSimple td
+{
+	padding: 10px;
+	color: #333;
+	border-top: 1px solid #6C6C6C;
+  text-align: left;
+}
+
+.tableSimple tbody tr:hover td
+{
+	background: #EEEEEE;
+}
+
+/* Table with both rows and columns having odd/even styles */
+
+.tableVerZebra
+{
+  font-family: 'Roboto', sans-serif;
+	font-size: 12px;
+	text-align: left;
+	border-collapse: collapse;
+  background: #EEEEEE;
+}
+
+.tableVerZebra th
+{
+	font-size: 15px;
+	padding: 12px 15px;
+  background: #EEEEEE;
+  color: #333;
+  font-weight: normal;
+  border-right: 1px solid #fff;
+	border-left: 1px solid #fff;
+}
+
+.tableVerZebra tr:nth-child(odd)
+{
+	background: #939393;
+  border-bottom: 1px solid #fff;
+  border-top: 1px solid #fff;
+  color: #fff;
+}
+
+.tableVerZebra td
+{
+	padding: 8px 15px;
+	border-right: 1px solid #fff;
+	border-left: 1px solid #fff;
+}
+
+.tableVerZebra tfoot td
+{
+  background: #EEEEEE;
+  color: #333;
+}
+
+/* Info Box */
+
+.infoBox
+{
+  width: 100%;
+  padding: 3px;
+  font-size: 0.8em;  
+  background: #EEEEEE;
+}
+
+.infoBox td
+{
+  padding: 5px;
+}
+
+.infoBox p:last-child 
+{
+    margin-bottom: 0;
+}
+
+.infoBox p
+{
+    margin-top: 0;
+}
+
+.infoBoxImageCell
+{
+  width: 16px;
+}
+
+.warningBox
+{
+  width: 100%;
+  padding: 3px;
+  font-size: 0.8em;
+  background: #EEEEEE;
+}
+
+.warningBox td
+{
+  padding: 5px;
+}
+
+.warningBox p:last-child 
+{
+    margin-bottom: 0;
+}
+
+.warningBox p
+{
+    margin-top: 0;
+}
+
+.warningBoxImageCell
+{
+  width: 16px;
+}
+
+/* Navigation elements */
+
+.CHNavLinkTop
+{
+}
+
+.CHNavLinkNext
+{
+}
+
+.CHNavLinkPrevious
+{
+}
+
+.CHSeeAlso
+{
+}
+
+.CHBreadcrumb
+{
+}
+
+/* FAQ */
+
+.faqQuestionText
+{
+  background: #EEEEEE;
+  padding: 10px;
+  padding-left: 20px;
+  font-size: 1.1em;
+}
+
+.faqAnswer
+{
+  padding-left: 10px;  
+}
