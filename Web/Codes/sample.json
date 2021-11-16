@@ -1,0 +1,34 @@
+{
+  "room_day_template": [
+    {
+      "name": "living_room_template",
+      "id": 3,
+      "stateAtTime": [
+        {
+          "time": "13:30",
+          "roomState": {
+            "room_roles": [
+            ],
+            "room_objects": [
+
+            ]
+          },
+          "objectState": [
+            {
+
+            },
+            {
+
+            }
+          ],
+          "role": [
+            {
+
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+

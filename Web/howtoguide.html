@@ -1,0 +1,807 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Getting started with Country Simulation Project</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="Styles/style.css" />
+  <script src="Scripts/script.js"></script>
+</head>
+<body>
+<div style="text-align: center; background-color: beige; border: 2px double burlywood"><h1>
+    GETTING STARTED WITH COUNTRY SIMULATION PROJECT
+
+  </h1>
+
+How to Guide - Creating & viewing templates with efficient storage for Country Simulation Project<br></div>
+<br>
+<br>
+<div style="text-align: center; background-color: lightgray; border: 1px dashed burlywood"><h3><a href="index.html" >Go back to index</a></h3></div>
+
+<hr>
+<p>
+<h2><b>Contents:</b></h2>
+<ul><div style="text-indent: 20px">
+  <li>
+    <a href="#h1_0">Introduction</a>
+    <ol><li>What is this project about?</li>
+    <li>Who is this guide for?</li></ol>
+  </li>
+  <li><a href="#h1_1"> Step One - Knowing the prerequisites</a></li>
+  <li>
+    <a href="#h1_2"> Step Two - Getting the idea of the project</a>
+    <ol><li>What are the objects of this project?</li>
+    <li>How do we visualise this?</li>
+    <li>How will we store this efficiently?</li>
+    <li>How will we view this stored information?</li>
+        <li>Understanding the Project Template</li>
+    <li>Future Expansion</li></ol>
+  </li>
+    <li><a href="#h1_b">Project Files Structure</a></li>
+  <li>
+    <a href="#h1_3"> Step Three - Beginning with Templates</a>
+    <ol><li>Sample JSON Template Insertion in MongoDB</li>
+    <li>Template Insertion in MongoDB</li>
+    <li>Extra Interest</li>
+    <li>Minimising Storage</li></ol>
+  </li>
+  <li>
+    <a href="#h1_4"> Step Four - Running Flask and viewing the database in a browser</a>
+    <ol>
+      <li>Installing Flask</li>
+      <li>Running the server in a Flask webserver</li>
+        <li>What needs to be improved?</li>
+    </ol>
+  </li>
+</div>
+</ul>
+
+<hr>
+<br>
+<br>
+<hr>
+<h1 id="#h1_0">Introduction</h1>
+<ul>
+<li><h2>What is this project about? </h2>
+<p>
+
+  This is a data analysis project that will essentially be a real-time Country Simulation.
+  The core idea of this project is to not only visualise the states of lives of citizens living in a country in what we can say a game-like state, but also to store this in a format that is efficient and can be queried on a normal desktop PC.
+  The core challenge of this project is about efficiently storing this state in a feasible storage manner. While we have not yet reached to the point where we might need to switch to a different storage manner, it can be assumed that we will certainly.
+
+
+</p></li>
+
+<li><h2>Who is this guide for? </h2>
+
+  <p>This guide is for those who are interested in trying to formulate a simulation of real-life as also fantasised in movies such as ‘Matrix’ and such. While we’re not even close to anywhere near that point, a beginning is a beginning. We can use this project alongside life-simulation to feed data from separate project consisting of the state of lives of different people in the country into this project to make a real-life simulation, just like a mini adventure game.
+  </p>
+
+  <p>The closest example you could get is SimCity’s Glassbox Engine (ref: <a href="https://www.gamasutra.com/view/news/164870/GDC_2012_Breaking_down_SimCitys_Glassbox_engine.php">https://www.gamasutra.com/view/news/164870/GDC_2012_Breaking_down_SimCitys_Glassbox_engine.php</a>).
+  This is an inspiration for the project and just like the engine is split into different object types, so is this project – with simulation in mind.
+  </p>
+
+
+<p>
+  This project can be expanded to so many different features in the future. We can use this for data mapping of a country, to project how a natural disaster could affect a country with the analytics in the simulation, see the change of growth of a country during a couple of years, or even develop a simulation game!
+  </p>
+  <p>In this guide, throughout there will be a good exploration and explanation of what tools we’re using, why and the code related. Also, there will be links for further reading in case you want to expand upon what is shown in the guide.
+  </p>
+</li></ul>
+<hr>
+<br>
+<br>
+<hr>
+  <h1 id="h1_1">
+    STEP ONE - KNOWING THE PREREQUISITES
+  </h1>
+<br>
+<ul>
+  <li>
+    <b>Python</b>
+    <ul>
+      <li>
+
+        <a href="https://www.w3schools.com/python/">https://www.w3schools.com/python/</a> is a great source for learning Python. Why Python? It is among the best languages to use for data analysis because of different still-updated libraries.
+      </li>
+    </ul>
+  </li>
+  <br>
+  <li>
+    <b>MongoDB</b>
+    <ul>
+      <li>
+
+        <a href="https://www.w3schools.com/python/python_mongodb_getstarted.asp">https://www.w3schools.com/python/python_mongodb_getstarted.asp</a> and <a href="https://towardsdatascience.com/using-mongodb-with-python-bcb26bf25d5d">https://towardsdatascience.com/using-mongodb-with-python-bcb26bf25d5d</a> are great source of learning MongoDB which we’re using as its easy to handle large data with it.
+      </li>
+    </ul>
+  </li>
+  <br>
+  <li>
+    <b>JavaScript</b>
+    <ul>
+      <li>
+
+      You can learn from <a href="https://towardsdatascience.com/using-mongodb-with-python-bcb26bf25d5d">https://towardsdatascience.com/using-mongodb-with-python-bcb26bf25d5d</a> and JS is used for functions to interpret and alter the data of database using JSON.
+      </li>
+    </ul>
+  </li>
+  <br>
+  <li>
+    <b>JSON</b>
+    <ul>
+      <li>
+        We will be using JSON to store the data in the form of templates. You can learn from here - <a href=" https://www.w3schools.com/js/js_json_intro.asp"> https://www.w3schools.com/js/js_json_intro.asp</a>.
+         </li>
+    </ul>
+  </li>
+  <br>
+  <li>
+    <b>Flask</b>
+    <ul>
+      <li>
+        We need flask to build up the website for fetching results from the database. Keep it installed with the following guide - <a href="https://flask.palletsprojects.com/en/1.1.x/installation/">https://flask.palletsprojects.com/en/1.1.x/installation/</a>
+ </li>
+    </ul>
+  </li>
+  <br>
+  <li>
+    <b>HTML & CSS</b>
+    <ul>
+      <li>
+        <a href=" https://www.w3schools.com"> https://www.w3schools.com</a> will greatly help in learning them.
+         </li>
+    </ul>
+  </li>
+
+</ul>
+<br>
+
+<b><u>(EXTRA)</u></b> - If you want to expand on this project, knowing the following will be great too:
+<ol>
+  <li> MongoEngine - <a href="https://realpython.com/introduction-to-mongodb-and-python/#mongoengine">https://realpython.com/introduction-to-mongodb-and-python/#mongoengine</a></li>
+<li> NumPy</li>
+  <li>Pandas</li>
+</ol>
+
+You can get further libraries guides from <a href="https://www.analyticsvidhya.com/blog/2016/01/complete-tutorial-learn-data-science-python-scratch-2/">https://www.analyticsvidhya.com/blog/2016/01/complete-tutorial-learn-data-science-python-scratch-2/</a> that can be used as well.
+
+<hr>
+<br>
+<br>
+<hr>
+
+<h1 id="h1_b">
+    PROJECT FILES STRUCTURE
+</h1>
+
+<br>
+<br>
+
+<center>
+<table class="infoBox" cellpadding="0" cellspacing="0">
+    <tbody>
+    <tr>
+      <td class="infoBoxImageCell">
+        <img alt="Information" src="Images/info.png" />
+      </td>
+      <td class="infoBoxText">
+        <center><a href="Codes/Project.zip"><b> Project Structure</b></a>
+          <br>
+          <br>
+        </center>
+<center>
+          <p class="faqQuestionText">
+              <img src="Images/Final11.png" alt="Project Directory" align="center">
+          </p>
+    </center>
+          <br />
+
+      </td>
+    </tr>
+    </tbody>
+  </table>
+    </center>
+
+<ul>
+    <li><b>'templates' folder</b> - Consists of the HTML webpages showing the database results in the webpage.
+    <ol><li><b>add.html</b> - HTML page for adding room objects, roles, room states and object states in the database collection</li>
+    <li><b>index.html</b> - Index HTML page showing all the contents of the collection.</li>
+    <li><b>search.html</b> - HTML page for searching through the rooms with a particular time to fetch the states of the room at that time</li></ol></li>
+
+    <li><b>'venv' folder</b> - Additional libraries folder</li>
+    <li><b>'data.json'</b> - Actual JSON data template for the project</li>
+    <li><b>'printingJson.py'</b> - Python code used in the guide for printing JSON code from the collection to the console</li>
+    <li><b>'sample.json'</b> - Sample JSON data for tutorial</li>
+    <li><b>'upload_final.py'</b> - Python code for inserting 'data.json' template to the database collection</li>
+    <li><b>'upload_sample.py'</b> - Python code for inserting 'sample.json' template to the database collection</li>
+    <li><b>'webpage.py'</b> - Main Python application for fetching results from the database, modifying and routing it to the HTML webpages</li>
+
+</ul>
+
+<hr>
+<br>
+<br>
+<hr>
+<h1 id="h1_2">
+  STEP TWO - GETTING THE IDEA OF THE PROJECT
+</h1>
+
+<br>
+<br>
+
+Having a clear blueprint and pseudocode is the best approach for making a project. Here’s ours.
+
+<ul>
+  <li><h2>What are the objects of this project?</h2>
+
+    Remember we compared the SimCity Glassbox Engine and said our project will also have different objects. Here are those:
+
+    <ol>
+      <li><b>Rooms</b> - This will be a place where a person may visit or see in their daily life. For example, bedroom, living room, kitchen etc.</li>
+      <li><b>Objects</b> - This will be a typical object inside a room such as chair, wall, ceiling etc.</li>
+      <li><b>Roles</b> - This will be a normal person inside a room. Such as a chef, housewife, boy.</li>
+      <li><b>State</b> (of Object) - An object that can be interacted with will have a State. A lamp can have a state of turned_ON or turned_OFF.</li>
+      <li><b>Action</b> (of Role) - An action of what a role is doing. A chef would have the action of is_cooking.</li>
+    </ol>
+<br>
+
+    We will be using templates for separate ‘rooms’. These templates will be made in JSON files. A typical database will have millions of ‘rooms’. These rooms will consist of ‘objects’, ‘roles’ and the ‘state’ of an object or ‘action’ of a role.
+
+  </li>
+
+  <li><h2>How do we visualise this?</h2>
+    Let’s say we’re in the life of a person. The person will go to different ‘rooms’ and they will be a ‘role’. We will have different ‘rooms’ for every room the person visits. There will be ‘objects’ for every object in a room and a ‘state’ for what the object state will be for that specific time.
+    <br>
+    The room will have different ‘State’ of time. We will typically have a 24 hours time-period where the ‘state’ of a room will change. We will have different days, each with different states of time, and different years. This will allow us to visualise an approximate game-like state over the years.
+  </li>
+
+  <li><h2>How will we store this efficiently?</h2>
+
+    We will be using dictionary inside dictionary and array of dictionaries in the JSON code with minimal description of the rooms, objects and roles to save storage. Each will have a unique ID assigned to distinguish with others and that will be the sole identification. These rooms will be stored within room_day_templates as an array of their state and times within the day.
+
+  <br>
+    We will load this JSON file into the MongoDB database using Python.</li>
+
+  <li><h2>How will we view this stored information?</h2>
+
+    We will be using a basic Flask webserver that will fetch the results using JavaScript. It will be very basic with minimal UI. We will allow the following:
+  <ol>
+    <li>Viewing data</li>
+    <li>Updating data</li>
+    <li>Deleting data - in future</li>
+  </ol></li>
+
+    <li><h2>Understanding the Project Template</h2>
+
+        <table class="infoBox" cellpadding="0" cellspacing="0">
+      <tbody>
+      <tr>
+        <td class="infoBoxImageCell">
+          <img alt="Information" src="Images/info.png" />
+        </td>
+        <td class="infoBoxText">
+          <center>
+            <a href="Codes/data.json"><b>Click here to download the code</b></a></center>
+          <br>
+            <center>
+          <img src="Images/Final4.png"></center>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+        <br>
+
+    If you look at the template, you will notice that we follow a singular template for all the rooms. Please download the
+    entire template to have a better glance of the template we will be using.
+
+        <br>
+        <br>
+
+    For this project, we take in the data template of a teenager who mostly lives a lazy introvert life. The teenager
+    visits only certain rooms - bathroom, bedroom, kitchen and living room and lives alone. This template has all the room objects
+    of individual rooms. Due to the project deadline, the objects are limited alongside the rooms.
+
+        <br>
+        <br>
+
+    So in this template, the teenager starts his day at 12 PM by waking up. He then goes to bathroom to brush. Afterwards
+    he heads to the kitchen to fetch his breakfast/lunch. He then goes to the living room, finishes his food in thirty minutes and
+    watches TV for an hour. He then goes back to his bedroom to use his PC for before heading to kitchen at the end of the template's day
+    at 6 PM to microwave his food. He finally heads to the living room to eat.
+
+        <br>
+        <br>
+
+    The template signifies change in the room's object state by boolean actions such as 'is_turned_on'. Also the role signifies
+    what action they are doing. For this project, even template for the time when the role isn't in the room is created so that you can
+    see the changes. There will be no roles present in the room.
+
+        <br>
+        <br>
+    Keep a close look on the boolean states of the room's objects to see how they change with the time. We can try to see a person's day with the help
+    of the template alongside the state of a room.
+
+        <br>
+        <br>
+    Though this is just a minute feature, this can be expanded upon to create real depiction of a person's live.
+
+
+
+  <li><h2>Future Expansion</h2>
+   As we will expand on this project and have millions of rooms, a simple JavaScript function will create the room templates based on simple instruction or AI. This is a must case for real-time simulation as it is not possible
+to manually create so many rooms. There also needs to functions for deleting stored data.</li>
+</ul>
+
+<hr>
+<br>
+<br>
+<hr>
+<h1 id="h1_3">
+  STEP THREE - BEGINNING WITH TEMPLATES
+</h1>
+
+<br>
+<ul>
+  <li><h2>SAMPLE JSON TEMPLATE INSERTION IN MONGODB</h2>
+      <br>
+
+    To begin with, we will write a sample JSON template and then insert the data in MongoDB. Then we will fetch the results.
+  <br>
+  Write this as a sample template:
+    <br>
+    <br>
+
+    <table class="infoBox" cellpadding="0" cellspacing="0">
+      <tbody>
+      <tr>
+        <td class="infoBoxImageCell">
+          <img alt="Information" src="Images/info.png" />
+        </td>
+        <td class="infoBoxText">
+          <center>
+            <a href="Codes/sample.json"><b>Click here to download the code</b></a></center>
+          <br>
+            <center>
+          <img src="Images/Final1.png"></center>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+  <br>
+    Here we have arrays of room names, their objects and object names and their state. We haven't introduced the roles,
+      objects and states properly yet as this is a sample template. However we will use this same template with just data
+      entered for the project.
+  <br>
+    <br>
+    Now we save this file as sample.json. Create a new Python file to import this JSON data in the MongoDB database.
+  <br>
+    <br>
+    <p class="faqQuestionText">
+      <b>
+        !!! Read !!!
+      </b>
+      <br>
+      <br>
+       <a href="https://docs.mongodb.com/guides/server/introduction/">https://docs.mongodb.com/guides/server/introduction/</a> on how to structure data for MongoDB.
+      <br>
+      <a href="https://docs.mongodb.com/guides/server/install/">https://docs.mongodb.com/guides/server/install/</a> for how to setup MongoDB local server
+      <br>
+    </p>
+
+
+    <table class="infoBox" cellpadding="0" cellspacing="0">
+      <tbody>
+      <tr>
+        <td class="infoBoxImageCell">
+          <img alt="Information" src="Images/info.png" />
+        </td>
+        <td class="infoBoxText">
+          <center>
+            <a href="Codes/upload_sample.py"><b>Click here to download the code</b></a></center>
+          <br>
+          <center><img src="Images/Final2.png"></center>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <br>
+    Once done, we need to run a separate code to print out the raw JSON code stored in the MongoDB Collection to see
+    if the data has been loaded into the database. Below is the code for printing out raw JSON code from the database:
+    <br>
+<br>
+
+    <table class="infoBox" cellpadding="0" cellspacing="0">
+      <tbody>
+      <tr>
+        <td class="infoBoxImageCell">
+          <img alt="Information" src="Images/info.png" />
+        </td>
+        <td class="infoBoxText">
+          <center><a href="Codes/printingJson.py">printingJson.py file</a></center>
+          <br>
+          <center><img src="Images/Final3.png"></center>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <br>
+
+<!--    You will be able to see the raw JSON in your console. Also if you have MongoDB Compass, you can easily view the data in your-->
+<!--    database by connecting to the localhost and then viewing the data. It will appear like this:-->
+
+<!--    <br>-->
+<!--    <br>-->
+
+<!--    <table class="infoBox" cellpadding="0" cellspacing="0">-->
+<!--      <tbody>-->
+<!--      <tr>-->
+<!--        <td class="infoBoxImageCell">-->
+<!--          <img alt="Information" src="Images/info.png" />-->
+<!--        </td>-->
+<!--        <td class="infoBoxText">-->
+<!--          <center><img src="Images/NewSS4.png"></center>-->
+<!--        </td>-->
+<!--      </tr>-->
+<!--      </tbody>-->
+<!--    </table>-->
+
+<!--    <br>-->
+
+    This will get you a grasp with templates. Now onto the real template!
+  </li>
+
+  <li><h2>TEMPLATE INSERTION IN MONGODB</h2>
+
+  Here’s the actual template of the project:
+  <br>
+    <br>
+    <table class="infoBox" cellpadding="0" cellspacing="0">
+      <tbody>
+      <tr>
+        <td class="infoBoxImageCell">
+          <img alt="Information" src="Images/info.png" />
+        </td>
+        <td class="infoBoxText">
+          <center><a href="Codes/data.json"><b>Template for room</b></a></center>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+  <br>
+  It is clear, concise and small representing the different states of a room at different times. In case you want to know
+      how this template was made - please refer above to 'Understand the template' under Step Three.
+      Now we import this template into the MongoDB database. It is recommended you use a separate different collection to ensure you have an error-free importing.
+<br>
+    <br>
+    <table class="infoBox" cellpadding="0" cellspacing="0">
+      <tbody>
+      <tr>
+        <td class="infoBoxImageCell">
+          <img alt="Information" src="Images/info.png" />
+        </td>
+        <td class="infoBoxText">
+          <center><a href="Codes/upload_final.py"><b>Code for inserting data to MongoDB database</b></a>
+          <br>
+            <br>
+          <img src="Images/Final5.png">
+          </center>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+
+  <br>
+
+  You can easily check the database contents using MongoDB Compass which comes as an option installation. You will see the contents of your database in a simple manner.
+  </li>
+
+  <li><h2>Extra Interest</h2>
+
+    In case you have a database with username and password as well, follow the below modifications in the code:
+<br>
+      <br>
+       <table class="infoBox" cellpadding="0" cellspacing="0">
+    <tbody>
+    <tr>
+      <td class="infoBoxImageCell">
+        <img alt="Information" src="Images/info.png" />
+      </td>
+      <td class="infoBoxText">
+        <center><b> Modification in code for  database with username and password</b>
+          <br>
+          <br>
+        </center>
+
+          <p class="faqQuestionText">
+            <b>
+              Old:
+            </b>
+            client = MongoClient('mongodb://localhost:27017/')
+          </p>
+          <p class="faqQuestionText">
+            <b>
+              New:
+            </b>
+            client = MongoClient('mongodb://%s:%s@IPADRESS:27017' % ('USERNAME HERE', 'PASSWORD HERE'))
+          </p>
+
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <br>
+    <br>
+    This is the beginning of templates. There will be millions of rooms like these with different times and separate room_year_template as we go by.</li>
+
+  <li><h2>Minimising Storage</h2>
+
+    <p>
+    The data is being stored in such a manner as to minimise storage as much as possible. Though we will need to compress this data much more
+      by using JavaScript functions to return the state of a room at certain point, we have only added important information to
+      demarcate the difference between different rooms and objects via IDs. No description of rooms and objects and roles is needed. In fact, the name
+      of these have been chosen in a way to describe them lightly.
+    </p>
+  </li>
+
+</ul>
+
+<hr>
+<br>
+<br>
+<hr>
+<h1 id="h1_4">
+  STEP FOUR - RUNNING FLASK AND VIEWING THE DATABASE IN A BROWSER
+</h1>
+
+
+<ul><li><h2>Installing Flask</h2>
+
+    We detailed a guide on how to install flask earlier. You should have it installed by now. Prepare yourself on how to use Python and JavaScript for flask. Below are some good guides on them:
+
+  <ul><li><a href="https://flask.palletsprojects.com/en/1.1.x/installation/">https://flask.palletsprojects.com/en/1.1.x/installation/</a></li>
+  <li><a href="https://www.digitalocean.com/community/tutorials/how-to-make-a-web-application-using-flask-in-python-3">https://www.digitalocean.com/community/tutorials/how-to-make-a-web-application-using-flask-in-python-3</a> </li>
+  </ul>
+
+  <br>
+
+  We are aiming for a simple and minimal UI, with focus on the data instead of UI. So for now, we will be doing a very simple UI.
+
+  <br>
+
+  For this project, we will be using PyMongo. Why PyMongo? It is very suitable for interacting with the MongoDB database from Python. You can learn how to use PyMongo using the documentation at <a href="https://pymongo.readthedocs.io/en/stable/tutorial.html">https://pymongo.readthedocs.io/en/stable/tutorial.html</a>.
+<br>
+
+
+
+</li>
+
+  <li><h2>RUNNING THE PROJECT ON FLASK WEBSERVER</h2>
+
+          <br>
+    <table class="infoBox" cellpadding="0" cellspacing="0">
+      <tbody>
+      <tr>
+        <td class="infoBoxImageCell">
+          <img alt="Information" src="Images/info.png" />
+        </td>
+        <td class="infoBoxText">
+          <center><a href="Codes/webpage.py"><b>Code snap of Flask webserver, download the file for better view</b></a>
+          <br>
+            <br>
+          <img src="Images/Final6.png">
+          </center>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+      <br>
+  <center>
+       <p class="faqQuestionText">
+
+            <b>
+                Project Files  -
+            </b>
+           <b><a href="Codes/Project.zip">CSCProject</a></b>
+           <br>
+           <br>
+           <a href="#h1_b"> (Read Project Structure to know about each file) </a>
+
+          </p>
+         </center>
+
+For this code, we have used different HTMl webpages for different tasks of the project. You must know about how to use HTML
+      and a bit of CSS and JS to understand how the code works. <a href="https://www.w3schools.com/js/DEFAULT.asp">
+          https://www.w3schools.com/js/DEFAULT.asp</a> is a good place to start.
+<br>
+      <br>
+
+      <table class="infoBox" cellpadding="0" cellspacing="0">
+      <tbody>
+      <tr>
+        <td class="infoBoxImageCell">
+          <img alt="Information" src="Images/info.png" />
+        </td>
+        <td class="infoBoxText">
+          <center><b>index.html</b>
+          <br>
+            <br>
+          <img src="Images/Final7.png" width="1200" height="800">
+          </center>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+      <br>
+
+      Open 'webpage.py' and run it to start the Flask webserver. Afterwards, go to the webserver URL to run the application.
+      We're using app route to direct specific functions of the project. For the index page, we use a GET method as we are not
+      trying to receive any input from the client. We are going to be showing all the rooms details, basically all the collection data on the index page.
+
+      <br>
+      <br>
+
+      <table class="infoBox" cellpadding="0" cellspacing="0">
+      <tbody>
+      <tr>
+        <td class="infoBoxImageCell">
+          <img alt="Information" src="Images/info.png" />
+        </td>
+        <td class="infoBoxText">
+          <center><b>search.html</b>
+          <br>
+            <br>
+          <img src="Images/Final8.png" width="1200" height="800">
+          </center>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+      <br>
+
+      The search button on the index page will redirect to the search page which allows to search the rooms and return their state and objects.
+      The time-period for the nearest rooms is 45 minutes. This search allows us to input a time for the day and then get the closest
+      state. Really helpful tool for data management. However, in the future as the project develops, a need for day will be possibly there for the user
+      to choose the day of the year along with time.
+
+      <br>
+      <br>
+
+      <table class="infoBox" cellpadding="0" cellspacing="0">
+      <tbody>
+      <tr>
+        <td class="infoBoxImageCell">
+          <img alt="Information" src="Images/info.png" />
+        </td>
+        <td class="infoBoxText">
+          <center><b>add.html</b>
+          <br>
+            <br>
+          <img src="Images/Final9.png" width="1200" height="800">
+          </center>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+      <br>
+
+      When on the index page, you can click on any of the rooms to add objects, roles, object states and role states. This is pretty in-depth system that allows
+      one to add a unique room object alongside their state. The input also takes in the object state action in boolean to signify what is the state of the object.
+      Sames goes for role. This will easily allow us to manipulate with data. The added data is stored in the database.
+
+      <br>
+      <br>
+
+
+      <table class="infoBox" cellpadding="0" cellspacing="0">
+      <tbody>
+      <tr>
+        <td class="infoBoxImageCell">
+          <img alt="Information" src="Images/info.png" />
+        </td>
+        <td class="infoBoxText">
+          <center><b>localhost/raw</b>
+          <br>
+            <br>
+          <img src="Images/Final10.png" width="1200" height="800">
+          </center>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+      <br>
+
+      For extra purposes, the project also displays the raw JSON code from the collection in the webpage. When going to the '/raw' subdomain, user can see the raw JSON
+      code in the webpage. Just enter '/raw' behind the localhost address to view the raw JSON code!
+
+      <br>
+      <br>
+
+      The Python application uses request methods throughout with majority of datetime library usage. The comments make it easier to understand what's going on in each section of the code.
+      The HTML pages loop in through each value stored in the collection to print out the details, using Python as well alongside JavaScript.
+
+      <br>
+      <br>
+      <br>
+
+
+  <br>
+  <table class="infoBox" cellpadding="0" cellspacing="0">
+    <tbody>
+    <tr>
+      <td class="infoBoxImageCell">
+        <img alt="Information" src="Images/info.png" />
+      </td>
+      <td class="infoBoxText">
+        <center><a href="Codes/Project.zip"><b> Additional Links</b></a>
+          <br>
+          <br>
+        </center>
+
+          <p class="faqQuestionText">
+            <b>
+              Learning about GET and POST requests - <a href="https://www.w3schools.com/python/ref_requests_post.asp">https://www.w3schools.com/python/ref_requests_post.asp</a>
+            </b>
+            What is app.py?
+          </p>
+          <br />
+
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+<br>
+You may notice that we used pyMongo here in the code. We used HTTP GET & POST Requests for the searchbar and in a basic form, return the data from the user input.
+<br>
+  <br>
+  To get a better grisp of how we used Python and JavaScript in Flask in the code above, you must read <a href="https://www.jitsejan.com/python-and-javascript-in-flask.html">https://www.jitsejan.com/python-and-javascript-in-flask.html</a>.
+
+    <br>
+      <br>
+
+    Once you run the 'webpage.py' code, run it on your local webserver and you'll be able to view the data in the database.
+
+  </li>
+  <br>
+  <p class="faqQuestionText">
+    <b>
+      Q:
+    </b>
+    What needs to be improved?
+  </p>
+  <p class="faqAnswer">
+    <b>A</b>:
+    The code for getting data from MongoDB database having JSON data needs to be improved. At the moment, we used specific keys
+    for individual state of time. However as we will possibly have millions of rooms and so many more time, we need to automate this procedure
+    instead of manually relying on it. We expect to do it further in the project.
+  </p>
+  <br />
+
+
+
+
+
+
+</ul>
+
+
+
+
+<script type="text/javascript">
+  if (window['initFooter']) {
+    initFooter();
+  }
+</script>
+</body>
+</html>
