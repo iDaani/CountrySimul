@@ -37,7 +37,7 @@ Download the required applications and libraries for easy implementation of the 
 * Run 'webpage.py' to start the Flask webserver.
 * Open the flask webserver to access the webpage.
 
-## Has this project been tested with test code?
+## Has this project been tested with test code ?
 
 Yes, the sample test data is already present when you run the project. It has been tested already with test cases which you can read from https://github.com/iDaani/CountrySimulation/blob/main/Web/Codes/Testing%20Template.xlsx
 
